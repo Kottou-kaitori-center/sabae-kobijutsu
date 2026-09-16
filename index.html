@@ -29,30 +29,33 @@
         .header {
             text-align: center;
             border-bottom: 2px double var(--primary-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            max-width: 800px;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        /* 1行目：バッジ（フォントサイズ・パディングを2倍に拡大） */
         .badge {
             display: inline-block;
             background-color: #e67e22;
             color: #ffffff;
             font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
+        /* 2行目：メインタイトル（フォントサイズ 2.4rem -> 4.8rem へ2倍拡大） */
         h1 {
             color: var(--primary-color);
-            font-size: 2.4rem;
+            font-size: 4.8rem;
             font-weight: 900;
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            line-height: 1.2;
         }
 
         .hero-image {
@@ -129,11 +132,22 @@
         .notes p {
             margin: 5px 0;
         }
+
+        /* スマートフォン表示時の自動調整 */
+        @media (max-width: 600px) {
+            .badge {
+                font-size: 1.2rem;
+                padding: 6px 16px;
+            }
+            h1 {
+                font-size: 2.8rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 最上部：タイトル＆バッジ -->
+    <!-- 最上部：タイトル＆バッジ（サイズ2倍調整） -->
     <header class="header">
         <div class="badge">初会！初荷多数！！</div>
         <h1>鯖江古美術交換会</h1>
