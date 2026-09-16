@@ -1,22 +1,14 @@
-<div style="position: relative; text-align: center; max-width: 600px; margin: 0 auto;">
-    <img src="サバエイメージ.jpg" alt="鯖江古美術" style="width: 100%; height: auto; display: block;">
-    <div style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 90%;">
-        <div style="display: inline-block; background-color: #e67e22; color: #ffffff; padding: 6px 18px; border-radius: 5px; font-weight: bold; font-size: 1.4em; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">初会！初荷多数！！</div>
-        <h1 style="font-size: 2.8em; font-weight: 900; margin: 0; color: #ffffff; text-shadow: 3px 3px 6px #000000, -2px -2px 4px #000000; -webkit-text-stroke: 1px #8b0000;">鯖江古美術交換会</h1>
-    </div>
-</div>
-<div style="text-align: center; margin: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-    <a href="greeting.html" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">あいさつ</a>
-    <a href="exhibition.html" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">ご出品について</a>
-    <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">アクセス</a>
-</div>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鯖江古美術交換会</title>
+    <!-- 日本語明朝体（Noto Serif JP）を明示的に読み込み（文字化け・フォント崩れ防止） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-color: #8b0000;
@@ -27,12 +19,68 @@
         }
 
         body {
-            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 20px 0;
             line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px double var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e67e22;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .nav-container {
+            text-align: center;
+            margin: 20px 0 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
         }
 
         .container {
@@ -42,6 +90,7 @@
             padding: 30px;
             border: 2px solid var(--primary-color);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
         }
 
         .info-table {
@@ -85,31 +134,51 @@
 </head>
 <body>
 
-<div class="container">
-    <table class="info-table">
-        <tr>
-            <th>開催日</th>
-            <td>毎月10日</td>
-        </tr>
-        <tr>
-            <th>開始時間</th>
-            <td>午前10時〜</td>
-        </tr>
-        <tr>
-            <th>会派</th>
-            <td>道具・古美術全般</td>
-        </tr>
-        <tr>
-            <th>会場</th>
-            <td>福井県鯖江市東鯖江2丁目621-1（北陸自動車道鯖江インターを降りて車で約3分）</td>
-        </tr>
-    </table>
+    <!-- 最上部：タイトル＆バッジ（画像の上・完全独立） -->
+    <header class="header">
+        <div class="badge">初会！初荷多数！！</div>
+        <h1>鯖江古美術交換会</h1>
+    </header>
 
-    <div class="notes">
-        <p>※全国の古物商許可証をお持ちの方ならどなたでもご参加いただけます。</p>
-        <p>※見学・初回参加ご希望の方はお気軽にお問い合わせください。</p>
+    <!-- 中央：画像 -->
+    <img src="サバエイメージ.jpg" alt="鯖江古美術" class="hero-image">
+
+    <!-- ナビゲーションボタン -->
+    <div class="nav-container">
+        <a href="greeting.html" class="nav-btn">あいさつ</a>
+        <a href="exhibition.html" class="nav-btn">ご出品について</a>
+        <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" class="nav-btn">アクセス</a>
     </div>
-</div>
+
+    <!-- 詳細情報（元の構造・文面を完全保持） -->
+    <div class="container">
+        <table class="info-table">
+            <tr>
+                <th>開催日</th>
+                <td>毎月10日</td>
+            </tr>
+            <tr>
+                <th>開始時間</th>
+                <td>午前10時〜</td>
+            </tr>
+            <tr>
+                <th>会派</th>
+                <td>道具・古美術全般</td>
+            </tr>
+            <tr>
+                <th>会場</th>
+                <td>
+                    福井県鯖江市東鯖江2丁目621-1
+                    <span class="sub-note">（北陸自動車道鯖江インターを降りて車で約3分）</span>
+                </td>
+            </tr>
+        </table>
+
+        <div class="notes">
+            <p>※全国の古物商許可証をお持ちの方ならどなたでもご参加いただけます。</p>
+            <p>※見学・初回参加ご希望の方はお気軽にお問い合わせください。</p>
+        </div>
+    </div>
 
 </body>
 </html>
