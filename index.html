@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鯖江古美術交換会</title>
-    <!-- Google Fonts: 信頼性と品格のある「ノト・セリフ（明朝体）」を読み込み -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #8b0000;
-            --accent-color: #d97724;
             --bg-color: #fdfbf7;
             --card-bg: #ffffff;
             --text-color: #333333;
@@ -20,108 +14,73 @@
         }
 
         body {
-            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 0;
+            padding: 20px;
             line-height: 1.6;
         }
 
-        /* ヒーローエリア（メイン画像＋オーバーレイテキスト） */
-        .hero-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        .header {
+            text-align: center;
+            border-bottom: 2px double var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e67e22;
+            color: #fff;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 2px;
         }
 
         .hero-image {
             width: 100%;
+            max-width: 600px;
             height: auto;
             display: block;
+            margin: 0 auto 20px auto;
         }
 
-        /* 可読性を高める暗めのグラデーション背景 */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* バッジ（初会！初荷多数！！） */
-        .badge {
-            background-color: var(--accent-color);
-            color: #ffffff;
-            padding: 6px 20px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        /* メインタイトル */
-        .hero-title {
-            color: #ffffff;
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin: 0;
-            letter-spacing: 4px;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 8px;
-        }
-
-        /* ナビゲーションボタン */
         .nav-container {
+            text-align: center;
+            margin: 20px 0;
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin: 25px 0;
-            padding: 0 15px;
         }
 
         .nav-btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 12px 24px;
             background-color: var(--primary-color);
             color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            transition: opacity 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            border-radius: 5px;
         }
 
-        .nav-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* メインコンテンツ（テーブル・注記） */
         .container {
             max-width: 800px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto;
             background: var(--card-bg);
             padding: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-            box-sizing: border-box;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .info-table {
@@ -131,7 +90,7 @@
         }
 
         .info-table th, .info-table td {
-            padding: 14px 15px;
+            padding: 12px 15px;
             border-bottom: 1px solid var(--border-color);
             text-align: left;
         }
@@ -141,11 +100,18 @@
             color: var(--primary-color);
             width: 25%;
             white-space: nowrap;
-            font-weight: 600;
+            font-weight: bold;
+        }
+
+        .sub-note {
+            font-size: 0.85rem;
+            color: #666;
+            display: block;
+            margin-top: 4px;
         }
 
         .notes {
-            background-color: #f9f8f5;
+            background-color: #f9f9f9;
             padding: 15px 20px;
             border-left: 4px solid var(--primary-color);
             font-size: 0.9rem;
@@ -154,47 +120,27 @@
         .notes p {
             margin: 5px 0;
         }
-
-        /* スマホ対応（レスポンシブ調整） */
-        @media (max-width: 600px) {
-            .hero-title {
-                font-size: 1.5rem;
-                letter-spacing: 2px;
-            }
-            .badge {
-                font-size: 0.8rem;
-                padding: 4px 12px;
-            }
-            .nav-btn {
-                width: 100%;
-                text-align: center;
-                padding: 12px 0;
-            }
-            .container {
-                padding: 15px;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- ヒーローエリア（画像＋オーバーレイテキスト） -->
-    <div class="hero-container">
-        <img src="サバエイメージ.jpg" alt="鯖江古美術" class="hero-image">
-        <div class="hero-overlay">
-            <div class="badge">初会！初荷多数！！</div>
-            <h1 class="hero-title">鯖江古美術交換会</h1>
-        </div>
-    </div>
+    <!-- 1. 最上部（文字のみ・画像と重ならない） -->
+    <header class="header">
+        <div class="badge">初会！初荷多数！！</div>
+        <h1>鯖江古美術交換会</h1>
+    </header>
 
-    <!-- ボタンエリア -->
+    <!-- 2. 画像 -->
+    <img src="サバエイメージ.jpg" alt="鯖江古美術" class="hero-image">
+
+    <!-- 3. ボタンエリア -->
     <div class="nav-container">
         <a href="greeting.html" class="nav-btn">あいさつ</a>
         <a href="exhibition.html" class="nav-btn">ご出品について</a>
         <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" class="nav-btn">アクセス</a>
     </div>
 
-    <!-- 詳細情報エリア -->
+    <!-- 4. 詳細情報（元のスタイルに戻し、注記・住所補足を保持） -->
     <div class="container">
         <table class="info-table">
             <tr>
@@ -211,7 +157,10 @@
             </tr>
             <tr>
                 <th>会場</th>
-                <td>福井県鯖江市東鯖江2丁目621-1<br><span style="font-size: 0.9em; color: #666;">（北陸自動車道鯖江インターを降りて車で約3分）</span></td>
+                <td>
+                    福井県鯖江市東鯖江2丁目621-1
+                    <span class="sub-note">（北陸自動車道鯖江インターを降りて車で約3分）</span>
+                </td>
             </tr>
         </table>
 
