@@ -47,7 +47,7 @@
             padding-bottom: 10px;
         }
 
-        /* 挿入した会場画像 */
+        /* 会場画像 */
         .exhibition-image {
             width: 100%;
             height: auto;
@@ -79,14 +79,23 @@
         .info-box ul {
             margin: 0;
             padding-left: 20px;
+            list-style-type: disc;
         }
 
         .info-box li {
             margin-bottom: 10px;
         }
 
-        .info-box li:last-child {
-            margin-bottom: 0;
+        /* 追加した注意書き枠のデザイン */
+        .note-box {
+            border: 1px solid #dcd6cd;
+            background-color: #ffffff;
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            list-style: none; /* リストの点（・）を消す */
         }
 
         .highlight-box {
@@ -120,8 +129,9 @@
     <div class="container">
         <h1>ご出品について</h1>
 
-        <!-- ご指定の会場写真 -->
-    <img src="サバエ画像2.jpg" alt="出品商品の展示風景" class="exhibition-image">
+        <!-- 会場写真（※ファイル名が サバエ画像2.jpg の場合） -->
+        <img src="サバエ画像2.jpg" alt="出品商品の展示風景" class="exhibition-image">
+
         <p class="intro-text">
             出品につきましては、オークション開催の前日・当日を除き、随時受け付けております。<br>
             市場には常駐しておりませんので、お持ち込みの際は前もってお電話またはお問い合わせフォームよりご連絡ください。
@@ -133,6 +143,7 @@
             <ul>
                 <li><strong>受付日時</strong>：随時受付（※開催前日および当日は除く）</li>
                 <li><strong>お預かり方法</strong>：事前連絡のうえ持ち込みをお願いします。（必ず事前にご連絡ください。）</li>
+                <li class="note-box">一般のお客様（古物商許可証番号をお持ちでない方）のご出品については売歩8分以外に別途手数料がかかります。</li>
             </ul>
         </div>
 
