@@ -4,80 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ご出品について - 鯖江古美術交換会</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #8b0000;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #dcd6cd;
+        }
+
         body {
-            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-            background-color: #fdfbf7;
-            color: #333333;
+            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 30px 15px;
             line-height: 1.8;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 30px;
-            border: 1px solid #dcd6cd;
+            background: var(--card-bg);
+            padding: 35px;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
         }
+
         h1 {
-            color: #8b0000;
-            border-bottom: 2px solid #8b0000;
-            padding-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 2.2rem;
             text-align: center;
-        }
-        p {
+            margin-top: 0;
             margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
         }
-        ul {
-            background-color: #fcfcfc;
-            border: 1px solid #e0e0e0;
-            padding: 20px 20px 20px 40px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+
+        /* 挿入した会場画像 */
+        .exhibition-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            margin: 0 0 25px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
-        li {
+
+        .intro-text {
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 1.1rem;
             margin-bottom: 10px;
         }
-        .highlight {
+
+        .info-box {
+            background-color: #fcfbfa;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 10px;
+        }
+
+        .info-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background-color: #fffde6;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            color: var(--primary-color);
             font-weight: bold;
-            background-color: #fff8dc;
-            padding: 10px;
-            border-left: 4px solid #8b0000;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
         }
-        .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #8b0000;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
-        }
+
         .btn-container {
             text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-top {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>ご出品について</h1>
-        <p>出品につきましては、オークション開催の前日・当日を除き、随時受け付けております。<br>市場には常駐しておりませんので、お持ち込みの際は事前にお電話またはお問い合わせフォームよりご連絡ください。</p>
-        
-        <p><strong>【出品に関するご案内】</strong></p>
-        <ul>
-            <li><strong>受付日時</strong>：随時受付（※開催前日および当日は除く）</li>
-            <li><strong>お預かり方法</strong>：事前連絡のうえ持ち込みをお願いします。（必ず事前に連絡ください。）</li>
-        </ul>
 
-        <div class="highlight" style="font-size: 1.2em; font-weight: bold; color: #8b0000; padding: 15px; border-left: 6px solid #8b0000;">
-    遠方の方やお品数が多くお持ち込みが難しい場合、搬入方法のご相談も承っております。お気軽にお問い合わせください。
-</div>
+        <!-- ご指定の会場写真 -->
+        <img src="会場イメージ2.jpg" alt="出品商品の展示風景" class="exhibition-image">
+
+        <p class="intro-text">
+            出品につきましては、オークション開催の前日・当日を除き、随時受け付けております。<br>
+            市場には常駐しておりませんので、お持ち込みの際は前もってお電話またはお問い合わせフォームよりご連絡ください。
+        </p>
+
+        <div class="section-title">【出品に関するご案内】</div>
+
+        <div class="info-box">
+            <ul>
+                <li><strong>受付日時</strong>：随時受付（※開催前日および当日は除く）</li>
+                <li><strong>お預かり方法</strong>：事前連絡のうえ持ち込みをお願いします。（必ず事前にご連絡ください。）</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            遠方の方やお品数が多くお持ち込みが難しい場合、搬入方法のご相談も承っております。お気軽にお問い合わせください。
+        </div>
+
         <div class="btn-container">
-            <a href="index.html" class="btn-back">トップページへ戻る</a>
+            <a href="index.html" class="btn-top">トップページへ戻る</a>
         </div>
     </div>
+
 </body>
 </html>
