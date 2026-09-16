@@ -1,25 +1,18 @@
-<div style="position: relative; text-align: center; max-width: 600px; margin: 0 auto;">
-    <img src="サバエイメージ.jpg" alt="鯖江古美術" style="width: 100%; height: auto; display: block;">
-    <div style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 90%;">
-        <div style="display: inline-block; background-color: #e67e22; color: #ffffff; padding: 6px 18px; border-radius: 5px; font-weight: bold; font-size: 1.4em; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">初会！初荷多数！！</div>
-        <h1 style="font-size: 2.8em; font-weight: 900; margin: 0; color: #ffffff; text-shadow: 3px 3px 6px #000000, -2px -2px 4px #000000; -webkit-text-stroke: 1px #8b0000;">鯖江古美術交換会</h1>
-    </div>
-</div>
-<div style="text-align: center; margin: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-    <a href="greeting.html" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">あいさつ</a>
-    <a href="exhibition.html" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">ご出品について</a>
-    <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #8b0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 5px;">アクセス</a>
-</div>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鯖江古美術交換会</title>
+    <!-- Google Fonts: 信頼性と品格のある「ノト・セリフ（明朝体）」を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-color: #8b0000;
+            --accent-color: #d97724;
             --bg-color: #fdfbf7;
             --card-bg: #ffffff;
             --text-color: #333333;
@@ -27,21 +20,108 @@
         }
 
         body {
-            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
         }
 
-        .container {
+        /* ヒーローエリア（メイン画像＋オーバーレイテキスト） */
+        .hero-container {
+            position: relative;
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 可読性を高める暗めのグラデーション背景 */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* バッジ（初会！初荷多数！！） */
+        .badge {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 6px 20px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* メインタイトル */
+        .hero-title {
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 4px;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        }
+
+        /* ナビゲーションボタン */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+            padding: 0 15px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* メインコンテンツ（テーブル・注記） */
+        .container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
             background: var(--card-bg);
             padding: 30px;
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            box-sizing: border-box;
         }
 
         .info-table {
@@ -51,7 +131,7 @@
         }
 
         .info-table th, .info-table td {
-            padding: 12px 15px;
+            padding: 14px 15px;
             border-bottom: 1px solid var(--border-color);
             text-align: left;
         }
@@ -61,18 +141,11 @@
             color: var(--primary-color);
             width: 25%;
             white-space: nowrap;
-            font-weight: bold;
-        }
-
-        .sub-note {
-            font-size: 0.85rem;
-            color: #666;
-            display: block;
-            margin-top: 4px;
+            font-weight: 600;
         }
 
         .notes {
-            background-color: #f9f9f9;
+            background-color: #f9f8f5;
             padding: 15px 20px;
             border-left: 4px solid var(--primary-color);
             font-size: 0.9rem;
@@ -81,35 +154,72 @@
         .notes p {
             margin: 5px 0;
         }
+
+        /* スマホ対応（レスポンシブ調整） */
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .badge {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+            }
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+                padding: 12px 0;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <table class="info-table">
-        <tr>
-            <th>開催日</th>
-            <td>毎月10日</td>
-        </tr>
-        <tr>
-            <th>開始時間</th>
-            <td>午前10時〜</td>
-        </tr>
-        <tr>
-            <th>会派</th>
-            <td>道具・古美術全般</td>
-        </tr>
-        <tr>
-            <th>会場</th>
-            <td>福井県鯖江市東鯖江2丁目621-1（北陸自動車道鯖江インターを降りて車で約3分）</td>
-        </tr>
-    </table>
-
-    <div class="notes">
-        <p>※全国の古物商許可証をお持ちの方ならどなたでもご参加いただけます。</p>
-        <p>※見学・初回参加ご希望の方はお気軽にお問い合わせください。</p>
+    <!-- ヒーローエリア（画像＋オーバーレイテキスト） -->
+    <div class="hero-container">
+        <img src="サバエイメージ.jpg" alt="鯖江古美術" class="hero-image">
+        <div class="hero-overlay">
+            <div class="badge">初会！初荷多数！！</div>
+            <h1 class="hero-title">鯖江古美術交換会</h1>
+        </div>
     </div>
-</div>
+
+    <!-- ボタンエリア -->
+    <div class="nav-container">
+        <a href="greeting.html" class="nav-btn">あいさつ</a>
+        <a href="exhibition.html" class="nav-btn">ご出品について</a>
+        <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" class="nav-btn">アクセス</a>
+    </div>
+
+    <!-- 詳細情報エリア -->
+    <div class="container">
+        <table class="info-table">
+            <tr>
+                <th>開催日</th>
+                <td>毎月10日</td>
+            </tr>
+            <tr>
+                <th>開始時間</th>
+                <td>午前10時〜</td>
+            </tr>
+            <tr>
+                <th>会派</th>
+                <td>道具・古美術全般</td>
+            </tr>
+            <tr>
+                <th>会場</th>
+                <td>福井県鯖江市東鯖江2丁目621-1<br><span style="font-size: 0.9em; color: #666;">（北陸自動車道鯖江インターを降りて車で約3分）</span></td>
+            </tr>
+        </table>
+
+        <div class="notes">
+            <p>※全国の古物商許可証をお持ちの方ならどなたでもご参加いただけます。</p>
+            <p>※見学・初回参加ご希望の方はお気軽にお問い合わせください。</p>
+        </div>
+    </div>
 
 </body>
 </html>
