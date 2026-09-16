@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鯖江古美術交換会</title>
+    <!-- 日本語明朝体（Noto Serif JP）を明示的に読み込み（文字化け・フォント崩れ防止） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-color: #8b0000;
@@ -14,11 +19,11 @@
         }
 
         body {
-            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 20px 0;
             line-height: 1.6;
         }
 
@@ -27,22 +32,26 @@
             border-bottom: 2px double var(--primary-color);
             padding-bottom: 15px;
             margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .badge {
             display: inline-block;
             background-color: #e67e22;
-            color: #fff;
+            color: #ffffff;
             font-weight: bold;
             padding: 4px 12px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 10px;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
+            font-weight: 900;
             margin: 0;
             letter-spacing: 2px;
         }
@@ -57,7 +66,7 @@
 
         .nav-container {
             text-align: center;
-            margin: 20px 0;
+            margin: 20px 0 30px 0;
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -81,6 +90,7 @@
             padding: 30px;
             border: 2px solid var(--primary-color);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
         }
 
         .info-table {
@@ -124,23 +134,23 @@
 </head>
 <body>
 
-    <!-- 1. 最上部（文字のみ・画像と重ならない） -->
+    <!-- 最上部：タイトル＆バッジ（画像の上・完全独立） -->
     <header class="header">
         <div class="badge">初会！初荷多数！！</div>
         <h1>鯖江古美術交換会</h1>
     </header>
 
-    <!-- 2. 画像 -->
+    <!-- 中央：画像 -->
     <img src="サバエイメージ.jpg" alt="鯖江古美術" class="hero-image">
 
-    <!-- 3. ボタンエリア -->
+    <!-- ナビゲーションボタン -->
     <div class="nav-container">
         <a href="greeting.html" class="nav-btn">あいさつ</a>
         <a href="exhibition.html" class="nav-btn">ご出品について</a>
         <a href="https://maps.app.goo.gl/sHVNLcG9zZCU2Msf8" target="_blank" class="nav-btn">アクセス</a>
     </div>
 
-    <!-- 4. 詳細情報（元のスタイルに戻し、注記・住所補足を保持） -->
+    <!-- 詳細情報（元の構造・文面を完全保持） -->
     <div class="container">
         <table class="info-table">
             <tr>
